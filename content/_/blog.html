@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Apache Cassandra | Apache Cassandra Documentation</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+    <meta name="dcterms.subject" content="_">
+    <meta name="dcterms.identifier" content="master">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<script>
+  const script = document.createElement("script");
+  const domain = window.location.hostname;
+  script.type = "text/javascript";
+  script.src = "https://plausible.cassandra.apache.org/js/plausible.js";
+  script.setAttribute("data-domain",domain);
+  script.setAttribute("defer",'true');
+  script.setAttribute("async",'true');
+  document.getElementsByTagName("head")[0].appendChild(script);
+</script>    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.0.2/list.min.js"></script>
+  </head>
+  <body class="blog-landing">
+      <div class="container mx-auto relative">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta property="og:type" content="website" />
+	<meta property="og:url" content="/" />
+	<meta property="og:site_name" content="Apache Cassandra" />
+
+<header id="top-nav">
+    <div class="inner relative">
+        <div class="logo"><a href="/"><img src="../assets/img/logo-white.svg" alt=""></a></div>
+        <div class="mobile-nav-icon right">
+            <img class="toggle-icon" src="../assets/img/hamburger-nav.svg">
+        </div>
+        <ul class="main-nav nav-links right flex flex-vert-center flex-space-between">
+    <li>
+        <a class="nav-link hide-mobile">Get Started</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/cassandra-basics.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-basics.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Cassandra Basics
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/quickstart.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-rocket.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Quickstart
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/ecosystem.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-ecosystem.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Ecosystem
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link" href="/doc/latest/">Documentation</a></li>
+    <li>
+        <a class="nav-link" href="/_/community.html">Community</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/community.html#code-of-conduct">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-welcome.png" alt="welcome icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Welcome
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#discussions">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-discussions.png" alt="discussions icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Discussions
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#project-governance">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-governance.png" alt="Governance icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Governance
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#how-to-contribute">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-contribute.png" alt="Contribute icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Contribute
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#meet-the-community">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-community.png" alt="Meet the Community icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Meet the Community
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="nav-link hide-mobile">Learn</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/case-studies.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-case-study.png" alt="Case Studies icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Case Studies
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/resources.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-resources.png" alt="Resources icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Resources
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/blog.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-blog.png" alt="Blog icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Blog
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link btn btn--filled" href="/_/download.html">Download Now</a></li>
+</ul>
+    </div>
+</header>
+
+        <div class="hero hero--home grad">
+            <div class="eye"></div>
+            <div id="home-content" class="text-center flex flex-center flex-column relative z2 ma-xlarge">
+                <h1>Blog</h1>
+            </div>
+        </div>
+       <section id="blog-main" class="arrow py-xlarge">
+           <div class="inner">
+               <input type="text" class="search mx-auto flex flex-horz-center" placeholder="Search Blog Posts" id="search-field">
+               
+               <p class="py-large text-center">Have something to share with the community? Let us know on the <a href="https://cassandra.traverstodd.com/community/#join-the-conversation">mailing list!</a></p>
+
+               <div id="all-tiles" class="grid-list list pb-large">
+                    <div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-11" class="discrete">Apache Cassandra Changelog #11</h3>
+<h4 id="january-18-2022" class="discrete">January 18, 2022</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>We deck the halls with Jira tickets running an Advent Calendar during December. Many CEPs have been approved and are in development while others, such as CEP-3 and CEP-10, have already been merged. We also welcome Sumanth Pasupuleti who becomes a committer and we start warming up for Google Summer of Code.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-11-January-2022.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="configurable-storage-ports-and-why-we-need-them" class="discrete">Configurable Storage Ports and Why We Need Them</h3>
+<h4 id="january-14-2022" class="discrete">January 14, 2022</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Cassandra’s network configuration is highly adaptable, communicating across a great variety of networks and devices, we explain how and why you might need to change your storage port configuration.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Configurable-Storage-Ports-and-Why-We-Need-Them.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="using-arithmetic-operators-in-cassandra-4-0" class="discrete">Using Arithmetic Operators in Cassandra 4.0</h3>
+<h4 id="december-21-2021" class="discrete">December 21, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>With the release of Cassandra 4.0, CQL now supports arithmetic operators. Benjamin Lerer describes how to use operators, and how we’ve addressed challenges around return types and types inference.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Using-Arithmetic-Operators-in-Cassandra-4.0.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="harry-an-open-source-fuzz-testing-and-verification-tool-for-apache-cassandra" class="discrete">Harry, an Open Source Fuzz Testing and Verification Tool for Apache Cassandra</h3>
+<h4 id="november-18-2021" class="discrete">November 18, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Introducing Harry, an Open Source fuzz testing and verification tool for Apache Cassandra that can combine properties of stress- and integration-testing tools. Harry can generate data for an arbitrary schema, execute data modification queries against the cluster, track the progress of operation execution, and make sure that responses to read queries are correct.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Harry-an-Open-Source-Fuzz-Testing-and-Verification-Tool-for-Apache-Cassandra.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="inside-cassandra-an-interview-with-marcel-birkner-at-instana" class="discrete">Inside Cassandra: an interview with Marcel Birkner at Instana</h3>
+<h4 id="november-17-2021" class="discrete">November 17, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>We interview Marcel Birkner, Site Reliability Engineer at Instana, how they use Apache Cassandra to store and process the metric data at scale and benefit from Cassandra’s fault tolerance, and have learned the importance of dog-fooding.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Inside-Cassandra-an-interview-with-Marcel-Birkner-at-Instana.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="what-the-future-holds-for-apache-cassandra" class="discrete">What the Future Holds for Apache Cassandra</h3>
+<h4 id="october-26-2021" class="discrete">October 26, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>The release of Apache Cassandra 4.0 has opened the floodgates to new feature proposals. Many feature ideas have been approved and are in development such as a cluster and code action simulator and support for general-purpose transaction support while others, such as Storage Attached Indexing, are being discussed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/What-the-Future-Holds-for-Apache-Cassandra.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-10" class="discrete">Apache Cassandra Changelog #10</h3>
+<h4 id="october-5-2021" class="discrete">October 5, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Apache Cassandra 4.0.1 is released, and Aleksei Zotov becomes a committer. Discussions are underway for some key, new feature proposals, including support for general-purpose transactions and Storage Attached Index (SAI). CEP-11, the pluggable memtable implementations proposal, has been approved, as has CEP-13 for a denylisting partitions feature.l-making.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-10-October-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="reaper-anti-entropy-repair-made-easy" class="discrete">Reaper: Anti-entropy Repair Made Easy</h3>
+<h4 id="september-28-2021" class="discrete">September 28, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Originally designed by Spotify, Reaper is an open source written in Java to schedule and orchestrate repairs of Apache Cassandra clusters. It helps make repairs as safe and reliable as possible, and with the recent release of Apache Cassandra 4.0 that also includes incremental repairs.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Reaper-Anti-entropy-Repair-Made-Easy.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="join-cassandra-at-apachecon-2021" class="discrete">Join Cassandra at Apachecon 2021</h3>
+<h4 id="september-20-2021" class="discrete">September 20, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Register to attend ApacheCon 2021 for a packed series of presentations on the new features in development for Apache Cassandra, along with best practices for CI &amp; testing, and cutting-edge use cases. The BoF event at the end of the day includes a deep dive into Apache Cassandra 4.0 and cocktail-making.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Join-Cassandra-at-ApacheCon-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="cassandra-on-kubernetes-a-beginners-guide" class="discrete">Cassandra on Kubernetes: A Beginner&#8217;s Guide</h3>
+<h4 id="september-4-2021" class="discrete">September 4, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Managing infrastructure has been standardizing around Kubernetes. Learn how the Apache Cassandra community has been developing solutions to simplify deployment and management of data with Cassandra operators and open source distributions for Kubernetes.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Cassandra-on-Kubernetes-A-Beginners-Guide.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-upgrade-advisory" class="discrete">Apache Cassandra Upgrade Advisory</h3>
+<h4 id="august-18-2021" class="discrete">August 18, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Users of Apache Cassandra 3.023, 3.0.24, 3.11.9 and 3.11.10 should upgrade due to the potential for data corruption during schema changes.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Upgrade-Advisory.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-9" class="discrete">Apache Cassandra Changelog #9</h3>
+<h4 id="august-18-2021-2" class="discrete">August 18, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Release of 4.0 GA, 3.0.25, and 3.0.11, upgrade advisory and Jon Meredith becomes committer.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-9-August-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-4-0-overview" class="discrete">Apache Cassandra 4.0 Overview</h3>
+<h4 id="august-18-2021-3" class="discrete">August 18, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Take a look at the full overview of the latest and greatest features of Apache Cassandra 4.0.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-4.0-Overview.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-4-0-is-here" class="discrete">Apache Cassandra 4.0 is Here</h3>
+<h4 id="july-27-2021" class="discrete">July 27, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>On November 9th, 2015 the Apache Cassandra project released version 3.0 and, with it, a host of really big changes you would expect in a major version.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-4.0-is-Here.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-8" class="discrete">Apache Cassandra Changelog #8</h3>
+<h4 id="june-28-2021" class="discrete">June 28, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>4.0-rc2 released, say hello to our Google Summer of Code intern and new community intro to Cassandra videos.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-8-June-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="cassandra-and-kubernetes-sig-update-2" class="discrete">Cassandra and Kubernetes: SIG Update #2</h3>
+<h4 id="june-9-2021" class="discrete">June 9, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>The Cassandra Kubernetes SIG is excited to share that there has been coalescence around the Cass Operator project as the community-based operator.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Cassandra-and-Kubernetes-SIG-Update-2.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-7" class="discrete">Apache Cassandra Changelog #7</h3>
+<h4 id="may-31-2021" class="discrete">May 31, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-7-May-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="speakers-announce-for-april-28-cassandra-4-0-world-party" class="discrete">Speakers Announce for April 28 Cassandra 4.0 World party</h3>
+<h4 id="april-192021" class="discrete">April 19,2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>The list of speakers for Apache Cassandra&#8217;s upcoming 4.0 World Party.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Speakers-Announced-for-April-28-Cassandra-4.0-World-Party.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-6" class="discrete">Apache Cassandra Changelog #6</h3>
+<h4 id="april-122021" class="discrete">April 12,2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-6-April-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-world-party-2021" class="discrete">Apache Cassandra World Party 2021</h3>
+<h4 id="march-25-2021" class="discrete">March 25, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>We are now one of the most important databases today and manage the biggest workloads in the world. Because of that, we want to gather the worldwide community to</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/World-Party.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="join-apache-cassandra-for-google-summer-of-code-2021" class="discrete">Join Apache Cassandra for Google Summer of Code 2021</h3>
+<h4 id="march-10-2021" class="discrete">March 10, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>The ASF has been a GSoC mentor organization since the beginning. Apache Cassandra mentored a successful GSoC project in 2016 and we are participating again this year.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Join-Cassandra-GSoC-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-5" class="discrete">Apache Cassandra Changelog #5</h3>
+<h4 id="march-08-2021" class="discrete">March 08, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-5-March-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-4" class="discrete">Apache Cassandra Changelog #4</h3>
+<h4 id="february-11-2021" class="discrete">February 11, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-4-February-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-3" class="discrete">Apache Cassandra Changelog #3</h3>
+<h4 id="january-19-2021" class="discrete">January 19, 2021</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-3-January-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-2" class="discrete">Apache Cassandra Changelog #2</h3>
+<h4 id="december-01-2020" class="discrete">December 01, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-2-December-2020.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-changelog-1" class="discrete">Apache Cassandra Changelog #1</h3>
+<h4 id="october-28-2020" class="discrete">October 28, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Introducing the first Cassandra Changelog blog! Our monthly roundup of key activities and knowledge to keep the community informed.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Changelog-1-October-2020.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="apache-cassandra-usage-report-2020" class="discrete">Apache Cassandra Usage Report 2020</h3>
+<h4 id="september-17-2020" class="discrete">September 17, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Apache Cassandra is the open source NoSQL database for mission critical data. Today the community announced findings from a comprehensive global survey of 901 practitioners on Cassandra usage. It’s the first of what will become an annual survey that provides a baseline understanding of who, how, and why organizations use Cassandra.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Apache-Cassandra-Usage-Report-2020.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="improving-apache-cassandras-front-door-and-backpressure" class="discrete">Improving Apache Cassandra’s Front Door and Backpressure</h3>
+<h4 id="september-03-2020" class="discrete">September 03, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>As part of CASSANDRA-15013, we have improved Cassandra’s ability to handle high throughput workloads, while having enough safeguards in place to protect itself from potentially going out of memory. In order to better explain the change we have made, let us understand at a high level, on how an incoming request is processed by Cassandra before the fix, followed by what we changed, and the new relevant configuration knobs available.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Improving-Apache-Cassandras-Front-Door-and-Backpressure.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="cassandra-and-kubernetes-sig-update-and-survey" class="discrete">Cassandra and Kubernetes: SIG Update and Survey</h3>
+<h4 id="august-14-2020" class="discrete">August 14, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Five operators for Apache Cassandra have been created that have made it easier to run containerized Cassandra on Kubernetes. Recently the major contributors to these operators came together to discuss the creation of a community-based operator with the intent of making one that makes it easy to run C* on K8s. One of the project’s organizational goals is that the end result will eventually become part of the Apache Software Foundation or the Apache Cassandra project.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Cassandra-and-Kubernetes-SIG-Update-and-Survey.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="introducing-apache-cassandra-4-0-beta-battle-tested-from-day-one" class="discrete">Introducing Apache Cassandra 4.0 Beta: Battle Tested From Day One</h3>
+<h4 id="july-20-2020" class="discrete">July 20, 2020</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>This is the most stable Apache Cassandra in history; you should start using Apache Cassandra 4.0 Beta today in your test and QA environments, head to the downloads site to get your hands on it. The Cassandra community is on a mission to deliver a 4.0 GA release that is ready to be deployed to production. You can guarantee this holds true by running your application workloads against the Beta release and contributing to the community’s validation effort to get Cassandra 4.0 to GA.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Introducing-Apache-Cassandra-4-Beta-Battle-Tested-From-Day-One.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="even-higher-availability-with-5x-faster-streaming-in-cassandra-4-0" class="discrete">Even Higher Availability with 5x Faster Streaming in Cassandra 4.0</h3>
+<h4 id="april-09-2019" class="discrete">April 09, 2019</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Streaming is a process where nodes of a cluster exchange data in the form of SSTables. Streaming can kick in during many situations such as bootstrap, repair, rebuild, range movement, cluster expansion, etc. In this post, we discuss the massive performance improvements made to the streaming process in Apache Cassandra 4.0.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Even-Higher-Availability-with-5x-Faster-Streaming-in-Cassandra-4.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="introducing-transient-replication" class="discrete">Introducing Transient Replication</h3>
+<h4 id="december-03-2018" class="discrete">December 03, 2018</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Transient Replication is a new experimental feature soon to be available in 4.0. When enabled, it allows for the creation of keyspaces where replication factor can be specified as a number of copies (full replicas) and temporary copies (transient replicas). Transient replicas retain the data they replicate only long enough for it to be propagated to full replicas, via incremental repair, at which point the data is deleted. Writing to transient replicas can be avoided almost entirely if monotonic reads are not required because it is possible to achieve a quorum of acknowledged writes without them.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Introducing-Transient-Replication.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="audit-logging-in-apache-cassandra-4-0" class="discrete">Audit Logging in Apache Cassandra 4.0</h3>
+<h4 id="october-29-2018" class="discrete">October 29, 2018</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Database audit logging is an industry standard tool for enterprises to capture critical data change events including what data changed and who triggered the event. These captured records can then be reviewed later to ensure compliance with regulatory, security and operational policies.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Audit-Logging-in-Apache-Cassandra-4.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="finding-bugs-in-cassandras-internals-with-property-based-testing" class="discrete">Finding Bugs in Cassandra&#8217;s Internals with Property-based Testing</h3>
+<h4 id="october-17-2018" class="discrete">October 17, 2018</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>As of September 1st, the Apache Cassandra community has shifted the focus of Cassandra 4.0 development from new feature work to testing, validation, and hardening, with the goal of releasing a stable 4.0 that every Cassandra user, from small deployments to large corporations, can deploy with confidence. There are several projects and methodologies that the community is undertaking to this end. One of these is the adoption of property-based testing, which was previously introduced here. This post will take a look at a specific use of this approach and how it found a bug in a new feature meant to ensure data integrity between the client and Cassandra.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Finding-Bugs-in-Cassandra's-Internals-with-Property-based-Testing.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="testing-apache-cassandra-4-0" class="discrete">Testing Apache Cassandra 4.0</h3>
+<h4 id="august-21-2018" class="discrete">August 21, 2018</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>With the goal of ensuring reliability and stability in Apache Cassandra 4.0, the project’s committers have voted to freeze new features on September 1 to concentrate on testing and validation before cutting a stable beta. Towards that goal, the community is investing in methodologies that can be performed at scale to exercise edge cases in the largest Cassandra clusters. The result, we hope, is to make Apache Cassandra 4.0 the best-tested and most reliable major release right out of the gate.</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Testing-Apache-Cassandra-4.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock card shadow relative test">
+<div class="content">
+<div class="openblock card-header">
+<div class="content">
+<h3 id="hardware-bound-zero-copy-streaming-in-apache-cassandra-4-0" class="discrete">Hardware-bound Zero Copy Streaming in Apache Cassandra 4.0</h3>
+<h4 id="august-07-2018" class="discrete">August 07, 2018</h4>
+</div>
+</div>
+<div class="openblock card-content">
+<div class="content">
+<div class="paragraph">
+<p>Streaming in Apache Cassandra powers host replacement, range movements, and cluster expansions. Streaming plays a crucial role in the cluster and as such its performance is key to not only the speed of the operations its used in but the cluster’s health generally. In Apache Cassandra 4.0, we have introduced an improved streaming implementation that reduces GC pressure and increases throughput several folds and are now limited, in some cases, only by the disk / network IO (See: CASSANDRA-14556).</p>
+</div>
+<div class="openblock card-btn card-btn--blog">
+<div class="content">
+<div class="paragraph btn btn--alt">
+<p><a href="blog/Hardware-bound-Zero-Copy-Streaming-in-Apache-Cassandra-4.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+               </div>
+           </div>
+       </section>
+           
+        <footer class="grad grad--two flex-center pb-xlarge">
+    <div class="inner text-center z2 relative">
+        <h2 class="white py-small">Get started with Cassandra, fast.</h2>
+        <a id="footer-cta" href="/_/quickstart.html" class="btn btn--filled ma-medium">Quickstart Guide</a>
+    </div>
+    <div class="inner flex flex-distribute-items mt-xlarge z2 relative">
+        <div class="col-2">
+            <div id="footer-logo" class="logo logo--footer mb-medium"><img src="../assets/img/logo-white.svg" alt=""></div>
+            <p>Apache Cassandra powers mission-critical deployments with improved performance and unparalleled levels of scale in the cloud.</p>
+        </div>
+        <div class="col-2 flex flex-center">
+            <ul class="columns-2">
+                <li class="mb-small"><a href="/">Home</a></li>
+                <li class="mb-small"><a href="/_/cassandra-basics.html">Cassandra Basics</a></li>
+                <li class="mb-small"><a href="/_/quickstart.html">Quickstart</a></li>
+                <li class="mb-small"><a href="/_/ecosystem.html">Ecosystem</a></li>
+                <li class="mb-small"><a href="/doc/latest/">Documentation</a></li>
+                <li class="mb-small"><a href="/_/community.html">Community</a></li>
+                <li class="mb-small"><a href="/_/case-studies.html">Case Studies</a></li>
+                <li class="mb-small"><a href="/_/resources.html">Resources</a></li>
+                <li class="mb-small"><a href="/_/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="lower-footer bg-white pa-medium">
+    <div class="flex flex-row flex-vert-center">
+        <div class="pr-medium"><img src="../assets/img//feather-small.png" alt="ASF" width="20"></div>
+        <div class="pr-medium"><a href="http://www.apache.org/" target="_blank">Foundation</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/events/current-event.html" target="_blank">Events</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/licenses/" target="_blank">License</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/thanks" target="_blank">Thanks</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/security" target="_blank">Security</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/sponsorship" target="_blank">Sponsorship</a></div>
+    </div>
+    <p class="my-medium">© <script>document.write(new Date().getFullYear())</script> <a href="https://apache.org" target="_blank">The Apache Software Foundation</a> under the terms of the Apache License 2.0. Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.</p>
+</div>
+<div id="fade" class="hidden"></div>
+<div id="modal" class="hidden">
+  <div id="close-modal" class="cursor-pointer"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+  <div id="mod-content" class="vid-mod-content resp-container"></div>
+</div><script>
+jQuery(function(){
+    var windowW = $(window).width();
+    $(document)
+    .on('click','.mobile-nav-icon',function(){
+        $('.main-nav').fadeIn();
+    })
+    .on('click','.main-nav',function(){
+        if(windowW <= 1000){
+            $(this).fadeOut();
+        }
+    })
+    .on('click','#version-toggle',function(){
+      $(this).toggleClass('active');
+      $(this).next().fadeToggle();
+    })
+    .on('click','#mobile-docs-nav-burger', function(){
+      $(this).toggleClass('active');
+      $('.docs-nav').toggleClass('active');
+    });
+    var url = window.location.pathname;
+    var isQuickstart = url.includes('quickstart.html');
+    if(isQuickstart){
+      var footerCTA = document.getElementById('footer-cta');
+      footerCTA.innerHTML = 'Get latest updates';
+      footerCTA.setAttribute('href', '/_/blog.html');
+    }
+});
+</script>      </div>
+  </body>
+<script>
+jQuery(function(){
+    var cards =  $('#all-tiles').find('.card');
+    var searchString = '';
+    $(document)
+    .on('click','.card',function(){
+        var link = $(this).find('a').attr('href');
+        window.location = link ;
+    });
+    $( "#search-field" ).keyup(function() {
+        $('.card').removeClass('hidden');
+        var val = $(this).val();
+        val = val.toLowerCase();
+        searchString = val;
+        filterCards(searchString)
+    });
+    var filterCards = function(searchString){
+        cards.each(function(){
+            var el = $(this);
+            var title = el.find('.discrete').text();
+            title = title.toLowerCase();
+            if(!title.includes(searchString)){
+                el.addClass('hidden');
+            }
+        });
+    }
+});
+</script>
+</html>

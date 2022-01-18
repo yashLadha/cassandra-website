@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Apache Cassandra | Apache Cassandra Documentation</title>
+    <link rel="stylesheet" href="../../assets/css/site.css">
+    <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+    <meta name="dcterms.subject" content="_">
+    <meta name="dcterms.identifier" content="master">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+<script>
+  const script = document.createElement("script");
+  const domain = window.location.hostname;
+  script.type = "text/javascript";
+  script.src = "https://plausible.cassandra.apache.org/js/plausible.js";
+  script.setAttribute("data-domain",domain);
+  script.setAttribute("defer",'true');
+  script.setAttribute("async",'true');
+  document.getElementsByTagName("head")[0].appendChild(script);
+</script>  </head>
+  <body class="basic ">
+      <div class="container mx-auto relative">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta property="og:type" content="website" />
+	<meta property="og:url" content="/" />
+	<meta property="og:site_name" content="Apache Cassandra" />
+
+<header id="top-nav">
+    <div class="inner relative">
+        <div class="logo"><a href="/"><img src="../../assets/img/logo-white.svg" alt=""></a></div>
+        <div class="mobile-nav-icon right">
+            <img class="toggle-icon" src="../../assets/img/hamburger-nav.svg">
+        </div>
+        <ul class="main-nav nav-links right flex flex-vert-center flex-space-between">
+    <li>
+        <a class="nav-link hide-mobile">Get Started</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/cassandra-basics.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-basics.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Cassandra Basics
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/quickstart.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-rocket.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Quickstart
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/ecosystem.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-ecosystem.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Ecosystem
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link" href="/doc/latest/">Documentation</a></li>
+    <li>
+        <a class="nav-link" href="/_/community.html">Community</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/community.html#code-of-conduct">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-welcome.png" alt="welcome icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Welcome
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#discussions">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-discussions.png" alt="discussions icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Discussions
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#project-governance">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-governance.png" alt="Governance icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Governance
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#how-to-contribute">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-contribute.png" alt="Contribute icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Contribute
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#meet-the-community">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-community.png" alt="Meet the Community icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Meet the Community
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="nav-link hide-mobile">Learn</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/case-studies.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-case-study.png" alt="Case Studies icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Case Studies
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/resources.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-resources.png" alt="Resources icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Resources
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/blog.html">
+                    <div class="sub-nav-icon">
+                        <img src="../../assets/img/sub-menu-blog.png" alt="Blog icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Blog
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link btn btn--filled" href="/_/download.html">Download Now</a></li>
+</ul>
+    </div>
+</header>
+
+        <div class="hero hero--home grad">
+            <div class="eye"></div>
+            <div id="home-content" class="text-center flex flex-center flex-column relative z2 ma-xlarge">
+                <h1>Code Style</h1>
+            </div>
+        </div>
+        <div class="flex-center py-large arrow">
+            <div class="inner inner--narrow">
+                <div class="sect1">
+<h2 id="code-style"><a class="anchor" href="#code-style"></a>Code Style</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="general-code-conventions"><a class="anchor" href="#general-code-conventions"></a>General Code Conventions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Cassandra project follows
+<a href="http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html">Sun&#8217;s Java
+coding conventions</a> with one important exception: <code>{</code> and <code>}</code> are always
+placed on a new line.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exception-handling"><a class="anchor" href="#exception-handling"></a>Exception handling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Never ever write <code>catch (&#8230;&#8203;) {}</code> or <code>catch (&#8230;&#8203;) { logger.error() }</code>
+merely to satisfy Java&#8217;s compile-time exception checking. Always
+propagate the exception up or throw <code>RuntimeException</code> (or, if it "can&#8217;t
+happen," <code>AssertionError</code>). This makes the exceptions visible to
+automated tests.</p>
+</li>
+<li>
+<p>Avoid propagating up checked exceptions that no caller handles.
+Rethrow as <code>RuntimeException</code> (or <code>IOError</code>, if that is more
+applicable).</p>
+</li>
+<li>
+<p>Similarly, logger.warn() is often a cop-out: is this an error or not?
+If it is don&#8217;t hide it behind a warn; if it isn&#8217;t, no need for the
+warning.</p>
+</li>
+<li>
+<p>If you genuinely know an exception indicates an expected condition,
+it&#8217;s okay to ignore it BUT this must be explicitly explained in a
+comment.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="boilerplate"><a class="anchor" href="#boilerplate"></a>Boilerplate</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid redundant <code>@Override</code> annotations when implementing abstract or
+interface methods.</p>
+</li>
+<li>
+<p>Do not implement equals or hashcode methods unless they are actually
+needed.</p>
+</li>
+<li>
+<p>Prefer public final fields to private fields with getters. (But prefer
+encapsulating behavior in "real" methods to either.)</p>
+</li>
+<li>
+<p>Prefer requiring initialization in the constructor to setters.</p>
+</li>
+<li>
+<p>Avoid redundant <code>this</code> references to member fields or methods.</p>
+</li>
+<li>
+<p>Do not extract interfaces (or abstract classes) unless you actually
+need multiple implementations of it.</p>
+</li>
+<li>
+<p>Always include braces for nested levels of conditionals and loops.
+Only avoid braces for single level.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multiline-statements"><a class="anchor" href="#multiline-statements"></a>Multiline statements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Try to keep lines under 120 characters, but use good judgement.
+It is better to exceed 120 by a little, than split a line that has no natural
+splitting points.</p>
+</li>
+<li>
+<p>When splitting inside a method call, use one line per parameter and
+align the items called:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs" data-lang="none">SSTableWriter writer = new SSTableWriter(cfs.getTempSSTablePath(),
+                                         columnFamilies.size(),
+                                         StorageService.getPartitioner());</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When splitting a ternary, use one line per clause, carry the operator,
+and align by indenting with 4 white spaces:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs" data-lang="none">var = bar == null
+    ? doFoo()
+    : doBar();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="whitespace"><a class="anchor" href="#whitespace"></a>Whitespace</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure to use 4 spaces instead of the tab character for all
+your indentation.</p>
+</li>
+<li>
+<p>Many lines in the current files have a bunch of trailing whitespace.
+If you encounter incorrect whitespace, clean up in a separate patch.
+Current and future reviewers won&#8217;t want to review whitespace diffs.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="imports"><a class="anchor" href="#imports"></a>Imports</h3>
+<div class="paragraph">
+<p>Observe the following order for your imports:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs" data-lang="none">java
+[blank line]
+com.google.common
+org.apache.commons
+org.junit
+org.slf4j
+[blank line]
+everything else alphabetically</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="format-files-for-ides"><a class="anchor" href="#format-files-for-ides"></a>Format files for IDEs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>IntelliJ:
+<a href="https://wiki.apache.org/cassandra/CodeStyle?action=AttachFile&amp;do=view&amp;target=intellij-codestyle.jar">intellij-codestyle.jar</a></p>
+</li>
+<li>
+<p>IntelliJ 13:
+<a href="https://gist.github.com/jdsumsion/9ab750a05c2a567c6afc">gist for IntelliJ
+13</a> (this is a work in progress, still working on javadoc, ternary
+style, line continuations, etc)</p>
+</li>
+<li>
+<p>Eclipse: (<a href="https://github.com/tjake/cassandra-style-eclipse" class="bare">github.com/tjake/cassandra-style-eclipse</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+        <footer class="grad grad--two flex-center pb-xlarge">
+    <div class="inner text-center z2 relative">
+        <h2 class="white py-small">Get started with Cassandra, fast.</h2>
+        <a id="footer-cta" href="/_/quickstart.html" class="btn btn--filled ma-medium">Quickstart Guide</a>
+    </div>
+    <div class="inner flex flex-distribute-items mt-xlarge z2 relative">
+        <div class="col-2">
+            <div id="footer-logo" class="logo logo--footer mb-medium"><img src="../../assets/img/logo-white.svg" alt=""></div>
+            <p>Apache Cassandra powers mission-critical deployments with improved performance and unparalleled levels of scale in the cloud.</p>
+        </div>
+        <div class="col-2 flex flex-center">
+            <ul class="columns-2">
+                <li class="mb-small"><a href="/">Home</a></li>
+                <li class="mb-small"><a href="/_/cassandra-basics.html">Cassandra Basics</a></li>
+                <li class="mb-small"><a href="/_/quickstart.html">Quickstart</a></li>
+                <li class="mb-small"><a href="/_/ecosystem.html">Ecosystem</a></li>
+                <li class="mb-small"><a href="/doc/latest/">Documentation</a></li>
+                <li class="mb-small"><a href="/_/community.html">Community</a></li>
+                <li class="mb-small"><a href="/_/case-studies.html">Case Studies</a></li>
+                <li class="mb-small"><a href="/_/resources.html">Resources</a></li>
+                <li class="mb-small"><a href="/_/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="lower-footer bg-white pa-medium">
+    <div class="flex flex-row flex-vert-center">
+        <div class="pr-medium"><img src="../../assets/img//feather-small.png" alt="ASF" width="20"></div>
+        <div class="pr-medium"><a href="http://www.apache.org/" target="_blank">Foundation</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/events/current-event.html" target="_blank">Events</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/licenses/" target="_blank">License</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/thanks" target="_blank">Thanks</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/security" target="_blank">Security</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/sponsorship" target="_blank">Sponsorship</a></div>
+    </div>
+    <p class="my-medium">© <script>document.write(new Date().getFullYear())</script> <a href="https://apache.org" target="_blank">The Apache Software Foundation</a> under the terms of the Apache License 2.0. Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.</p>
+</div>
+<div id="fade" class="hidden"></div>
+<div id="modal" class="hidden">
+  <div id="close-modal" class="cursor-pointer"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+  <div id="mod-content" class="vid-mod-content resp-container"></div>
+</div><script>
+jQuery(function(){
+    var windowW = $(window).width();
+    $(document)
+    .on('click','.mobile-nav-icon',function(){
+        $('.main-nav').fadeIn();
+    })
+    .on('click','.main-nav',function(){
+        if(windowW <= 1000){
+            $(this).fadeOut();
+        }
+    })
+    .on('click','#version-toggle',function(){
+      $(this).toggleClass('active');
+      $(this).next().fadeToggle();
+    })
+    .on('click','#mobile-docs-nav-burger', function(){
+      $(this).toggleClass('active');
+      $('.docs-nav').toggleClass('active');
+    });
+    var url = window.location.pathname;
+    var isQuickstart = url.includes('quickstart.html');
+    if(isQuickstart){
+      var footerCTA = document.getElementById('footer-cta');
+      footerCTA.innerHTML = 'Get latest updates';
+      footerCTA.setAttribute('href', '/_/blog.html');
+    }
+});
+</script>      </div>
+  </body>
+<script>
+jQuery(function(){
+    jQuery(document)
+    .on('click','.cassandra-cloud h3',function(){
+        var el = jQuery(this);
+        el.toggleClass('active');
+        el.next().slideToggle();
+    })
+    .on('click','.image-expand img', function(){
+      $(this).clone().appendTo('#mod-content');
+      $('#fade,#modal,#close-modal').fadeIn();
+      $('body,html').addClass('no-scroll');
+    })
+    .on('click','#fade,#close-modal', function(){
+      $('#fade,#modal,#close-modal').fadeOut();
+      $('body,html').removeClass('no-scroll');
+      $('#mod-content').html('');
+    });
+});
+</script>
+</html>

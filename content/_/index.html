@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Apache Cassandra | Apache Cassandra Documentation</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <meta name="description" content="Open Source NoSQL Database Manage massive amounts of data, fast, without losing sleep">
+    <meta name="keywords" content="Home, apache cassandra">
+    <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+    <meta name="dcterms.subject" content="_">
+    <meta name="dcterms.identifier" content="master">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<script>
+  const script = document.createElement("script");
+  const domain = window.location.hostname;
+  script.type = "text/javascript";
+  script.src = "https://plausible.cassandra.apache.org/js/plausible.js";
+  script.setAttribute("data-domain",domain);
+  script.setAttribute("defer",'true');
+  script.setAttribute("async",'true');
+  document.getElementsByTagName("head")[0].appendChild(script);
+</script>  </head>
+  <body class="homepage  home">
+      <div class="container mx-auto relative">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta property="og:type" content="website" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="/" />
+	<meta property="og:site_name" content="Apache Cassandra" />
+
+<header id="top-nav">
+    <div class="inner relative">
+        <div class="logo"><a href="/"><img src="../assets/img/logo-white.svg" alt=""></a></div>
+        <div class="mobile-nav-icon right">
+            <img class="toggle-icon" src="../assets/img/hamburger-nav.svg">
+        </div>
+        <ul class="main-nav nav-links right flex flex-vert-center flex-space-between">
+    <li>
+        <a class="nav-link hide-mobile">Get Started</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/cassandra-basics.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-basics.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Cassandra Basics
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/quickstart.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-rocket.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Quickstart
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/ecosystem.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-ecosystem.png" alt="cassandra basics icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Ecosystem
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link" href="/doc/latest/">Documentation</a></li>
+    <li>
+        <a class="nav-link" href="/_/community.html">Community</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/community.html#code-of-conduct">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-welcome.png" alt="welcome icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Welcome
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#discussions">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-discussions.png" alt="discussions icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Discussions
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#project-governance">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-governance.png" alt="Governance icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Governance
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#how-to-contribute">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-contribute.png" alt="Contribute icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Contribute
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro hide-mobile">
+                <a href="/_/community.html#meet-the-community">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-community.png" alt="Meet the Community icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Meet the Community
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="nav-link hide-mobile">Learn</a>
+        <ul class="sub-menu bg-white">
+            <li class="pa-micro">
+                <a href="/_/case-studies.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-case-study.png" alt="Case Studies icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Case Studies
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/resources.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-resources.png" alt="Resources icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Resources
+                    </div>
+                </a>
+            </li>
+            <li class="pa-micro">
+                <a href="/_/blog.html">
+                    <div class="sub-nav-icon">
+                        <img src="../assets/img/sub-menu-blog.png" alt="Blog icon">
+                    </div>
+                    <div class="sub-nav-text teal py-small">
+                        Blog
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li><a class="nav-link btn btn--filled" href="/_/download.html">Download Now</a></li>
+</ul>
+    </div>
+</header>
+
+        <div class="main-content">
+            <div class="openblock hero hero--home grad">
+<div class="content">
+<div class="openblock eye">
+<div class="content">
+
+</div>
+</div>
+<div class="openblock home-hero-content text-center flex flex-center flex-column relative z2 pa-xlarge">
+<div class="content">
+<h1 class="discrete">Open Source NoSQL Database</h1>
+<h2 class="discrete">Manage massive amounts of data, fast, without losing sleep</h2>
+<div class="paragraph btn btn--filled">
+<p><a href="cassandra-basics.html" class="page">Learn More</a></p>
+</div>
+<div class="paragraph btn btn--filled">
+<p><a href="quickstart.html" class="page">Quickstart</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock arrow">
+<div class="content">
+<div class="openblock home-banner w75 product-highlight mx-auto pt-xlarge cf">
+<div class="content">
+<div class="openblock float50 full-800">
+<div class="content">
+<div class="paragraph">
+<p>Cassandra 4.0 is now GA! How did we deliver the most stable database release ever shipped?</p>
+</div>
+</div>
+</div>
+<div class="openblock float50 full-800">
+<div class="content">
+<div class="paragraph btn btn--grad ml-large">
+<p><a href="blog/Apache-Cassandra-4.0-is-Here.html" class="page">Read the Blog</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock home-features grad grad--two flex-center relative">
+<div class="content">
+<div class="openblock inner text-center py-xxlarge">
+<div class="content">
+<h2 class="discrete">What is Apache Cassandra?</h2>
+<h3 class="discrete">Apache Cassandra is an open source NoSQL distributed database trusted by thousands of companies for scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data.</h3>
+<div class="openblock features-wrapper cf">
+<div class="content">
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/hybrid.png" alt="hybrid"></span></p>
+</div>
+<h3 class="discrete">Hybrid</h3>
+<div class="paragraph">
+<p>Masterless architecture and low latency means Cassandra will withstand an entire data center outage with no data loss—across public or private clouds and on-premises.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/fault.png" alt="fault"></span></p>
+</div>
+<h3 class="discrete">Fault Tolerant</h3>
+<div class="paragraph">
+<p>Cassandra&#8217;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages. Failed nodes can be replaced with no downtime.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/scalable.png" alt="scalable"></span></p>
+</div>
+<h3 class="discrete">Focus on Quality</h3>
+<div class="paragraph">
+<p>To ensure reliability and stability, Cassandra is tested on clusters as large as 1,000 nodes and with hundreds of real world use cases and schemas tested with replay, fuzz, property-based, fault-injection, and performance tests.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/performant.png" alt="performant"></span></p>
+</div>
+<h3 class="discrete">Performant</h3>
+<div class="paragraph">
+<p>Cassandra <a href="http://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf" target="_blank" rel="noopener">consistently outperforms</a> popular NoSQL alternatives in benchmarks and real applications, primarily because of fundamental architectural choices.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/control.png" alt="control"></span></p>
+</div>
+<h3 class="discrete">You&#8217;re In Control</h3>
+<div class="paragraph">
+<p>Choose between synchronous or asynchronous replication for each update. Highly available asynchronous operations are optimized with features like Hinted Handoff and Read Repair.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/cloud_native.png" alt="cloud native"></span></p>
+</div>
+<h3 class="discrete">Security and Observability</h3>
+<div class="paragraph">
+<p>The audit logging feature for operators tracks the DML, DDL, and DCL activity with minimal impact to normal workload performance, while the fqltool allows the capture and replay of production workloads for analysis.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/decentral.png" alt="decentral"></span></p>
+</div>
+<h3 class="discrete">Distributed</h3>
+<div class="paragraph">
+<p>Cassandra is suitable for applications that can&#8217;t afford to lose data, even when an entire data center goes down. There are no single points of failure. There are no network bottlenecks. Every node in the cluster is identical.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/scalable.png" alt="scalable"></span></p>
+</div>
+<h3 class="discrete">Scalable</h3>
+<div class="paragraph">
+<p>Read and write throughput both increase linearly as new machines are added, with no downtime or interruption to applications.</p>
+</div>
+</div>
+</div>
+<div class="openblock feature text-center ma-small my-large pa-small">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="_images/Icons/elastic.png" alt="elastic"></span></p>
+</div>
+<h3 class="discrete">Elastic</h3>
+<div class="paragraph">
+<p>Cassandra streams data between nodes during scaling operations such as adding a new node or datacenter during peak traffic times. Zero Copy Streaming makes this up to 5x faster without vnodes for a more elastic architecture particularly in cloud and Kubernetes environments.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock users-section arrow">
+<div class="content">
+<div class="openblock inner text-center py-xxlarge z2">
+<div class="content">
+<h2 class="discrete">Cassandra Users</h2>
+<div class="paragraph">
+<p>Cassandra is used by thousands of companies with large active data sets.</p>
+</div>
+<div class="openblock cf home-quotes py-large">
+<div class="content">
+<div class="openblock home-quote hidden pa-large text-left">
+<div class="content">
+<div class="paragraph">
+<p>"Since 2016, application engineers at Bloomberg have turned to Cassandra because it’s easy to use, easy to scale, and always available. We serve up more than 20 billion requests per day on a nearly 1 PB dataset across a fleet of 1,700+ Cassandra nodes."</p>
+</div>
+<div class="paragraph">
+<p><strong>– Isaac Reath, Software Engineering Team Lead, NoSQL Infrastructure at Bloomberg</strong></p>
+</div>
+</div>
+</div>
+<div class="openblock home-quote hidden pa-large text-left">
+<div class="content">
+<div class="paragraph">
+<p>"We needed something that would handle really high write throughput and keep scaling on the write throughput. That forced us to look at distributed stores, and Apache Cassandra was the option that fitted what we needed."</p>
+</div>
+<div class="paragraph">
+<p><strong>– Elliott Sims Senior Systems Administrator, Backblaze</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph btn btn--grad">
+<p><a href="case-studies.html" class="page">Read Case Studies</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock home-case-study quote grad py-large">
+<div class="content">
+<div class="openblock inner text-center inner--narrow py-large z2">
+<div class="content">
+<h2 class="discrete">Cassandra Ecosystem</h2>
+<div class="paragraph">
+<p>Our ecosystem includes a range of third-party Cassandra projects, tools, products, and services that may be useful to end users.</p>
+</div>
+<div class="paragraph btn btn--filled">
+<p><a href="ecosystem.html" class="page">Go to Ecosystem</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock home-community arrow flex flex-center">
+<div class="content">
+<div class="openblock inner text-center py-large">
+<div class="content">
+<h2 class="discrete">Community Spotlight</h2>
+<div class="paragraph w50 mx-auto">
+<p>Here&#8217;s what the Cassandra community has been doing to advance the world&#8217;s premier open source NoSQL database.</p>
+</div>
+<div class="openblock cf text-left ma-large pa-large">
+<div class="content">
+<div class="openblock float50 full-800">
+<div class="content">
+<h3 class="discrete">Apache Cassandra 4.0 Overview</h3>
+<div class="paragraph">
+<p>Apache Cassandra 4.0 is the most stable release in the project&#8217;s history and is the beginning of a shift to a 12-month release cycle with release supported for a three-year term. The latest version has undergone intensive testing a sets a new high benchmark for distributed databases, and includes new features that offer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Increased speed and scalability</p>
+</li>
+<li>
+<p>Improved consistency</p>
+</li>
+<li>
+<p>New configuration settings</p>
+</li>
+<li>
+<p>Minimized latency</p>
+</li>
+<li>
+<p>Enhanced security and observability</p>
+</li>
+<li>
+<p>Better compression</p>
+</li>
+</ul>
+</div>
+<div class="paragraph btn btn--alt my-small">
+<p><a href="blog/Apache-Cassandra-4.0-Overview.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+<div class="openblock float50 full-800 flex flex-center pa-medium"">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="_images/blog/casseye.jpg" alt="casseye">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock cf text-left ma-large pa-large">
+<div class="content">
+<div class="openblock float50 full-800 right">
+<div class="content">
+<h3 class="discrete">Apache Cassandra Changelog #9</h3>
+<div class="paragraph">
+<p>Jon Meredith joins the PMC, and Apache Cassandra 4.0 garners lots of positive press coverage. Meanwhile, users of Apache Cassandra 3.0.23, 3.0.24, 3.11.9, and 3.11.10 are advised to upgrade due to a potential for data corruption during schema changes. Changelog #9 also includes an update from the Kubernetes SIG on cass-operator and K8ssandra&#8217;s support for Cassandra 4.0. At the same time, developers are reminded that Cassandra Enhancement Proposals are required for features that change the codebase.</p>
+</div>
+<div class="paragraph btn btn--alt my-small">
+<p><a href="blog/Apache-Cassandra-Changelog-9-August-2021.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+<div class="openblock float50 full-800 flex flex-center right pa-medium"">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="_images/blog/blog-post-improving-resiliency/changelog_rectangle.jpg" alt="changelog rectangle">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock cf text-left ma-large pa-large">
+<div class="content">
+<div class="openblock float50 full-800">
+<div class="content">
+<h3 class="discrete">Cassandra on Kubernetes: A Beginner&#8217;s Guide</h3>
+<div class="paragraph">
+<p>Take a high-level look at the challenges of Kubernetes and the data layer—learn how the community built cass-operator to reduce the complexities. The operator supplies a translation layer between what Kubernetes needs to maintain and the actual implementation by the database. The guide also covers deploying Cassandra on Kubernetes with a single Helm chart and open-source K8ssandra, a distribution of Apache Cassandra that runs on Kubernetes, which offers a suite of tools to ease and automate operational tasks.</p>
+</div>
+<div class="paragraph btn btn--alt my-small">
+<p><a href="blog/Cassandra-on-Kubernetes-A-Beginners-Guide.html" class="page">Read More</a></p>
+</div>
+</div>
+</div>
+<div class="openblock float50 full-800 flex flex-center pa-medium"">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="_images/blog/cassandra-on-kubernetes-beginner.png" alt="cassandra on kubernetes beginner">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </div>
+        <footer class="grad grad--two flex-center pb-xlarge">
+    <div class="inner text-center z2 relative">
+        <h2 class="white py-small">Get started with Cassandra, fast.</h2>
+        <a id="footer-cta" href="/_/quickstart.html" class="btn btn--filled ma-medium">Quickstart Guide</a>
+    </div>
+    <div class="inner flex flex-distribute-items mt-xlarge z2 relative">
+        <div class="col-2">
+            <div id="footer-logo" class="logo logo--footer mb-medium"><img src="../assets/img/logo-white.svg" alt=""></div>
+            <p>Apache Cassandra powers mission-critical deployments with improved performance and unparalleled levels of scale in the cloud.</p>
+        </div>
+        <div class="col-2 flex flex-center">
+            <ul class="columns-2">
+                <li class="mb-small"><a href="/">Home</a></li>
+                <li class="mb-small"><a href="/_/cassandra-basics.html">Cassandra Basics</a></li>
+                <li class="mb-small"><a href="/_/quickstart.html">Quickstart</a></li>
+                <li class="mb-small"><a href="/_/ecosystem.html">Ecosystem</a></li>
+                <li class="mb-small"><a href="/doc/latest/">Documentation</a></li>
+                <li class="mb-small"><a href="/_/community.html">Community</a></li>
+                <li class="mb-small"><a href="/_/case-studies.html">Case Studies</a></li>
+                <li class="mb-small"><a href="/_/resources.html">Resources</a></li>
+                <li class="mb-small"><a href="/_/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="lower-footer bg-white pa-medium">
+    <div class="flex flex-row flex-vert-center">
+        <div class="pr-medium"><img src="../assets/img//feather-small.png" alt="ASF" width="20"></div>
+        <div class="pr-medium"><a href="http://www.apache.org/" target="_blank">Foundation</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/events/current-event.html" target="_blank">Events</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/licenses/" target="_blank">License</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/thanks" target="_blank">Thanks</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/security" target="_blank">Security</a></div>
+        <div class="pr-medium"><a href="https://www.apache.org/foundation/sponsorship" target="_blank">Sponsorship</a></div>
+    </div>
+    <p class="my-medium">© <script>document.write(new Date().getFullYear())</script> <a href="https://apache.org" target="_blank">The Apache Software Foundation</a> under the terms of the Apache License 2.0. Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.</p>
+</div>
+<div id="fade" class="hidden"></div>
+<div id="modal" class="hidden">
+  <div id="close-modal" class="cursor-pointer"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+  <div id="mod-content" class="vid-mod-content resp-container"></div>
+</div><script>
+jQuery(function(){
+    var windowW = $(window).width();
+    $(document)
+    .on('click','.mobile-nav-icon',function(){
+        $('.main-nav').fadeIn();
+    })
+    .on('click','.main-nav',function(){
+        if(windowW <= 1000){
+            $(this).fadeOut();
+        }
+    })
+    .on('click','#version-toggle',function(){
+      $(this).toggleClass('active');
+      $(this).next().fadeToggle();
+    })
+    .on('click','#mobile-docs-nav-burger', function(){
+      $(this).toggleClass('active');
+      $('.docs-nav').toggleClass('active');
+    });
+    var url = window.location.pathname;
+    var isQuickstart = url.includes('quickstart.html');
+    if(isQuickstart){
+      var footerCTA = document.getElementById('footer-cta');
+      footerCTA.innerHTML = 'Get latest updates';
+      footerCTA.setAttribute('href', '/_/blog.html');
+    }
+});
+</script>      </div>
+  </body>
+ <script>
+jQuery(function(){
+    var quotes = $('.home-quotes').find('.home-quote').length;
+    var arr = [];
+    function shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
+    var i = 0;
+    for(i; i < quotes; i++){
+        arr.push(i);
+    }
+    shuffle(arr);
+    $('.home-quote').eq(arr[0]).removeClass('hidden');
+});
+</script>
+</html>
